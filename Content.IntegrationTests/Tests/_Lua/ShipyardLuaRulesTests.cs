@@ -57,6 +57,14 @@ public sealed class ShipyardLuaRulesTests
         "GunneryServerStationConsolesEnforced",
     };
 
+    private static readonly Dictionary<VesselSize, string[]> AllowedGunneryServersBySize = new()
+    {
+        { VesselSize.Micro, new[] { "GunneryServerLow" } },
+        { VesselSize.Small, new[] { "GunneryServerLow", "GunneryServerMedium" } },
+        { VesselSize.Medium, new[] { "GunneryServerLow", "GunneryServerMedium", "GunneryServerHigh" } },
+        { VesselSize.Large, new[] { "GunneryServerLow", "GunneryServerMedium", "GunneryServerHigh", "GunneryServerUltra" } },
+    };
+
     private static readonly string[] ForbiddenPowerAllSizes =
     {
         "SMESBig",
@@ -240,17 +248,23 @@ public sealed class ShipyardLuaRulesTests
                     {
                         sb.AppendLine($"[Оружие] {vessel.ID}: вычислительная мощность орудий ({totalGunCost}) превышает ёмкость серверов вооружения ({totalServerCapacity}).");
                     }
+                    var size = vessel.Category;
+                    var allowedGunneryServers = AllowedGunneryServersBySize.TryGetValue(size, out var allowedServers) ? allowedServers : Array.Empty<string>();
                     var gunneryMetaQuery = entManager.EntityQueryEnumerator<FireControlServerComponent, MetaDataComponent, TransformComponent>();
                     while (gunneryMetaQuery.MoveNext(out _, out _, out var gMeta, out var gXform))
                     {
                         if (gXform.GridUid != gridUid) continue;
                         var gPid = gMeta.EntityPrototype?.ID;
-                        if (gPid != null && WarnGunneryServerPrototypes.Contains(gPid))
+                        if (gPid == null) continue;
+                        if (gPid.StartsWith("GunneryServer", StringComparison.Ordinal) && !allowedGunneryServers.Contains(gPid))
+                        {
+                            sb.AppendLine($"[Оружие] {vessel.ID}: сервер вооружения '{gPid}' запрещён для размера {size}. Допустимы: {string.Join(", ", allowedGunneryServers)}.");
+                        }
+                        else if (WarnGunneryServerPrototypes.Contains(gPid))
                         {
                             Console.WriteLine($"::warning ::[Оружие] {vessel.ID}: обнаружен '{gPid}' — проверьте, что этот сервер вооружения допустим на данном шаттле ({vessel.ShuttlePath}).");
                         }
                     }
-                    var size = vessel.Category;
                     if (vessel.Classes == null || !vessel.Classes.Any()) { sb.AppendLine($"[Класс] {vessel.ID}: поле 'class' обязательно и должно содержать хотя бы одно значение."); }
                     if (vessel.Engines == null || !vessel.Engines.Any()) { sb.AppendLine($"[Двигатель] {vessel.ID}: поле 'engine' обязательно и должно содержать хотя бы одно значение."); }
                     int airAlarms = 0;
