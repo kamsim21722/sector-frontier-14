@@ -2207,15 +2207,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,5.5
       parent: 1
-- proto: GunneryServerFlatpack
-  entities:
-  - uid: 208
-    components:
-    - type: Transform
-      parent: 206
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: GunSafe
   entities:
   - uid: 206
@@ -2247,7 +2238,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 208
           - 207
         paper_label: !type:ContainerSlot
           showEnts: False

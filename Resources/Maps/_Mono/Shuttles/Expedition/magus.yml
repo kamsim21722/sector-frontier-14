@@ -3066,15 +3066,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-7.5
       parent: 1
-- proto: GunneryServerFlatpack
-  entities:
-  - uid: 309
-    components:
-    - type: Transform
-      parent: 307
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: GunSafe
   entities:
   - uid: 307
@@ -3091,7 +3082,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 309
           - 308
         paper_label: !type:ContainerSlot
           showEnts: False
