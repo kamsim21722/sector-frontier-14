@@ -4203,3 +4203,18 @@ Entries:
   id: 295
   time: '2026-05-27T15:03:55.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/582
+- author: Maksimvini
+  changes:
+    - type: Add
+      message: Добавлены шаттлы  FrameWorker, Avorion, Lifecomer
+    - type: Remove
+      message: Удалены шаттлы  Eden, Framework, Skalpel
+    - type: Tweak
+      message: Изменено веселье!
+    - type: Fix
+      message: >-
+        Skalpel более не имеет Сервера мониторинга экипажа, что ломает при
+        покупке все мониторинги сервера.
+  id: 296
+  time: '2026-05-27T15:04:07.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/581
