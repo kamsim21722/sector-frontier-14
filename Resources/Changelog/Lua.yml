@@ -4124,3 +4124,20 @@ Entries:
   id: 292
   time: '2026-05-27T14:36:02.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/579
+- author: ressuw
+  changes:
+    - type: Add
+      message: Добавлено веселье!
+    - type: Remove
+      message: Удалено веселье!
+    - type: Tweak
+      message: Изменено веселье!
+    - type: Fix
+      message: >-
+        На орион:  Добавлены кнопочки для гермозатворов, повернут медвенд,
+        добавлены углы на сканере масс, добавлены стулья в отделе рнд, убрано 2
+        плаката, полноценные подстанции заменены на настенные, категория шаттла
+        стала медиум, снижена цена на 7500 спесос.
+  id: 293
+  time: '2026-05-27T14:37:15.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/580
