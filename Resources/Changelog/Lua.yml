@@ -4141,3 +4141,18 @@ Entries:
   id: 293
   time: '2026-05-27T14:37:15.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/580
+- author: BTReflex
+  changes:
+    - type: Add
+      message: Крафты раздвижных окон и бронеокон из урана и плазмы.
+    - type: Add
+      message: Крафты пончиков и желейных пончиков.
+    - type: Add
+      message: Крафты ступенек.
+    - type: Add
+      message: Плюшки Аматы Хабаровой.
+    - type: Add
+      message: Крафты направленных урановых окон и бронеокон
+  id: 294
+  time: '2026-05-27T14:49:33.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/577
