@@ -4266,3 +4266,32 @@ Entries:
   id: 300
   time: '2026-06-22T03:10:41.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/587
+- author: Donevinoll
+  changes:
+    - type: Add
+      message: Hydra 220mm
+    - type: Add
+      message: Тип-1008 "Ускоритель плазмы
+    - type: Add
+      message: Тип 1984 "Ускоритель плазмы"
+    - type: Add
+      message: PASM "Скилла"
+    - type: Add
+      message: ТИП 2048 "Scattershot canon"
+    - type: Add
+      message: peacekeeper salvo gun
+    - type: Add
+      message: >-
+        Добавлен малый двигатель (антаг) в стилистике _Mono (красный, синдикат,
+        StormCreed)
+    - type: Add
+      message: >-
+        Добавлен средний двигатель (антаг) в стилистике _Mono (красный,
+        синдикат, StormCreed)
+    - type: Add
+      message: >-
+        Добавлен большой двигатель (антаг) в стилистике _Mono (красный,
+        синдикат, StormCreed)
+  id: 301
+  time: '2026-06-22T03:14:12.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/589
