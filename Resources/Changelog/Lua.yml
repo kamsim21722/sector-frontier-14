@@ -4295,3 +4295,12 @@ Entries:
   id: 301
   time: '2026-06-22T03:14:12.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/589
+- author: MREOOOW
+  changes:
+    - type: Fix
+      message: >-
+        Исправлен баг с затемнением экрана при использовании оружия дальнего
+        боя.
+  id: 302
+  time: '2026-06-22T03:14:54.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/590
